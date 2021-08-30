@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.warehousemanagement.persistence.mapper.ProductMapper">
+    <!--    PRODUCT RESULTMAP  -->
+    <resultMap id="ProductResultMap" type="com.example.warehousemanagement.persistence.model.Product">
+        <id column="p_product_id" property="productId"/>
+        <result column="p_name" property="name"/>
+        <collection property="productArticleRelationsList" javaType="ArrayList"
+                    ofType="com.example.warehousemanagement.persistence.model.ProductArticleRelation">
+            <id column="product_id" property="productId"/>
+            <result column="par_article_id" property="articleId"/>
+            <result column="par_quantity" property="minimumQuantity"/>
+            <result column="i_stock" property="stock"/>
+        </collection>
+    </resultMap>
+</mapper>

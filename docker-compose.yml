@@ -1,0 +1,16 @@
+version: '3'
+services:
+  warehouse-management-api:
+    build: .
+    container_name: warehouse-management-api
+    volumes:
+        - /var/data:/data
+    environment:
+    - SPRING_PROFILES_ACTIVE=prd
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/application/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5

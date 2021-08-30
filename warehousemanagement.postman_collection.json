@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "5ac9c982-c6bf-40f8-8bb1-f0ebcab4533d",
+		"name": "Warehouse Management App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Load Articles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/articles/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"articles",
+						"load"
+					]
+				},
+				"description": "Load articles data based on input json to database"
+			},
+			"response": []
+		},
+		{
+			"name": "Load Products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/products/load",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"products",
+						"load"
+					]
+				},
+				"description": "Load products data from an input json to database"
+			},
+			"response": []
+		},
+		{
+			"name": "Place Product Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n        \"productId\" : 1,\n        \"quantity\" : 1\n   \n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"orders"
+					]
+				},
+				"description": "Place an order for a product. "
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

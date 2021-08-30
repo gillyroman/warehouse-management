@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  config:
+    activate:
+      on-profile: prd
+  application:
+    name: warehouse-management
+  datasource:
+    url: 'jdbc:h2:mem:warehouse_management'
+    driverClassName: org.h2.Driver
+    #username: produsername
+    #password: prodpassword
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: true
+
+logging:
+  level:
+    root: INFO
+
+management:
+  endpoints:
+    web:
+      base-path: /application
+      exposure:
+        include: health
+
+warehousemanagement:
+  dataload:
+    inventory:
+      location: "/data/inventory.json"
+    product:
+      location: "/data/products.json"
