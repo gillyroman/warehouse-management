@@ -23,7 +23,7 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "/place", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("Place an order for a product in the store")
     public ResponseEntity<Order> placeOrder (@RequestBody PlaceOrderRequest placeOrderRequest) {
         Order order = orderService.placeOrder(placeOrderRequest);

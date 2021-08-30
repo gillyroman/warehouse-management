@@ -48,7 +48,7 @@ public class IntegrationTest {
         PlaceOrderRequest request = new PlaceOrderRequest();
         request.setProductId(1);
         request.setQuantity(1);
-        mockMvc.perform(post("/v1/orders/").contentType("application/json").content(objectMapper.writeValueAsString(request))).andExpect(status().isCreated());
+        mockMvc.perform(post("/v1/orders/place").contentType("application/json").content(objectMapper.writeValueAsString(request))).andExpect(status().isCreated());
     }
 
     @Test

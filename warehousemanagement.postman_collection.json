@@ -65,7 +65,7 @@
 					"raw": "{\n   \n        \"productId\" : 1,\n        \"quantity\" : 1\n   \n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/v1/orders",
+					"raw": "http://localhost:8080/v1/orders/place",
 					"protocol": "http",
 					"host": [
 						"localhost"
